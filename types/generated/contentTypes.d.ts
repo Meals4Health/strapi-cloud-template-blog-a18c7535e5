@@ -860,12 +860,16 @@ export interface ApiNutritionNutrition extends Schema.CollectionType {
     singularName: 'nutrition';
     pluralName: 'nutritions';
     displayName: 'Nutrition';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     Header: Attribute.String;
+    Body: Attribute.Blocks;
+    ActiveYN: Attribute.Boolean;
+    DisplayOrder: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

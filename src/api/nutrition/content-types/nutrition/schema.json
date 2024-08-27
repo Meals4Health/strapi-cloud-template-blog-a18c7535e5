@@ -4,7 +4,8 @@
   "info": {
     "singularName": "nutrition",
     "pluralName": "nutritions",
-    "displayName": "Nutrition"
+    "displayName": "Nutrition",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,15 @@
   "attributes": {
     "Header": {
       "type": "string"
+    },
+    "Body": {
+      "type": "blocks"
+    },
+    "ActiveYN": {
+      "type": "boolean"
+    },
+    "DisplayOrder": {
+      "type": "integer"
     }
   }
 }
