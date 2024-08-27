@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nutritions",
+  "info": {
+    "singularName": "nutrition",
+    "pluralName": "nutritions",
+    "displayName": "Nutrition"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Header": {
+      "type": "string"
+    }
+  }
+}
