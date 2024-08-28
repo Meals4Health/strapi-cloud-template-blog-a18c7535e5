@@ -23,9 +23,6 @@
     },
     "DisplayOrder": {
       "type": "integer"
-    },
-    "Body_rtm": {
-      "type": "richtext"
     }
   }
 }
