@@ -12,16 +12,16 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Header": {
+    "header": {
       "type": "string"
     },
-    "Body": {
+    "body": {
       "type": "blocks"
     },
-    "ActiveYN": {
+    "activeYN": {
       "type": "boolean"
     },
-    "DisplayOrder": {
+    "displayOrder": {
       "type": "integer"
     }
   }

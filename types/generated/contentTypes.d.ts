@@ -866,10 +866,10 @@ export interface ApiNutritionNutrition extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Header: Attribute.String;
-    Body: Attribute.Blocks;
-    ActiveYN: Attribute.Boolean;
-    DisplayOrder: Attribute.Integer;
+    header: Attribute.String;
+    body: Attribute.Blocks;
+    activeYN: Attribute.Boolean;
+    displayOrder: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
