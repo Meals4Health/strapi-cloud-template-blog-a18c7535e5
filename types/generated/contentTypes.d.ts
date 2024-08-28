@@ -870,6 +870,7 @@ export interface ApiNutritionNutrition extends Schema.CollectionType {
     Body: Attribute.Blocks;
     ActiveYN: Attribute.Boolean;
     DisplayOrder: Attribute.Integer;
+    Body_rtm: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
