@@ -788,32 +788,30 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
-export interface ApiAboutAbout extends Schema.SingleType {
-  collectionName: 'abouts';
+export interface ApiFaqSectionFaqSection extends Schema.SingleType {
+  collectionName: 'faq_sections';
   info: {
-    singularName: 'about';
-    pluralName: 'abouts';
-    displayName: 'About';
-    description: 'Write about yourself and the content you create';
+    singularName: 'faq-section';
+    pluralName: 'faq-sections';
+    displayName: 'FAQSection';
   };
   options: {
-    draftAndPublish: false;
+    draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
-    blocks: Attribute.DynamicZone<
-      ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
-    >;
+    header: Attribute.String;
+    body: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::about.about',
+      'api::faq-section.faq-section',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::about.about',
+      'api::faq-section.faq-section',
       'oneToOne',
       'admin::user'
     > &
@@ -906,7 +904,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
-      'api::about.about': ApiAboutAbout;
+      'api::faq-section.faq-section': ApiFaqSectionFaqSection;
       'api::global.global': ApiGlobalGlobal;
       'api::nutrition.nutrition': ApiNutritionNutrition;
     }
