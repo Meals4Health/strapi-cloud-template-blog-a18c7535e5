@@ -837,6 +837,7 @@ export interface ApiFaqCategoryFaqCategory extends Schema.CollectionType {
       'api::faq.faq'
     >;
     category: Attribute.String;
+    categoryName: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
