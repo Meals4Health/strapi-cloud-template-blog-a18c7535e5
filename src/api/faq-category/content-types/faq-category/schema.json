@@ -21,7 +21,7 @@
     "category": {
       "type": "string"
     },
-    "categoryName": {
+    "displayValue": {
       "type": "string"
     }
   }
