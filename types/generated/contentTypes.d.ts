@@ -788,12 +788,39 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiFaqFaq extends Schema.CollectionType {
+  collectionName: 'faqs';
+  info: {
+    singularName: 'faq';
+    pluralName: 'faqs';
+    displayName: 'FAQ';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    question: Attribute.String;
+    answer: Attribute.Blocks;
+    activeYN: Attribute.Boolean;
+    category: Attribute.String;
+    displayOrder: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFaqSectionFaqSection extends Schema.SingleType {
   collectionName: 'faq_sections';
   info: {
     singularName: 'faq-section';
     pluralName: 'faq-sections';
     displayName: 'FAQSection';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -801,6 +828,7 @@ export interface ApiFaqSectionFaqSection extends Schema.SingleType {
   attributes: {
     header: Attribute.String;
     body: Attribute.Blocks;
+    Question: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -935,6 +963,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::faq.faq': ApiFaqFaq;
       'api::faq-section.faq-section': ApiFaqSectionFaqSection;
       'api::global.global': ApiGlobalGlobal;
       'api::nutrition.nutrition': ApiNutritionNutrition;

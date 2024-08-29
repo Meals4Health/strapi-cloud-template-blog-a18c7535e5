@@ -4,7 +4,8 @@
   "info": {
     "singularName": "faq-section",
     "pluralName": "faq-sections",
-    "displayName": "FAQSection"
+    "displayName": "FAQSection",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,6 +17,9 @@
     },
     "body": {
       "type": "blocks"
+    },
+    "Question": {
+      "type": "json"
     }
   }
 }
