@@ -24,11 +24,11 @@
     "displayOrder": {
       "type": "integer"
     },
-    "faq_category": {
+    "category": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::faq-category.faq-category",
-      "inversedBy": "category"
+      "inversedBy": "faqs"
     }
   }
 }

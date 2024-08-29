@@ -12,11 +12,14 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "category": {
+    "faqs": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::faq.faq",
-      "mappedBy": "faq_category"
+      "mappedBy": "category"
+    },
+    "category": {
+      "type": "string"
     }
   }
 }

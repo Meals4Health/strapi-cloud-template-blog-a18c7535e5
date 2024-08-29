@@ -804,9 +804,9 @@ export interface ApiFaqFaq extends Schema.CollectionType {
     answer: Attribute.Blocks;
     activeYN: Attribute.Boolean;
     displayOrder: Attribute.Integer;
-    faq_category: Attribute.Relation<
+    category: Attribute.Relation<
       'api::faq.faq',
-      'oneToOne',
+      'manyToOne',
       'api::faq-category.faq-category'
     >;
     createdAt: Attribute.DateTime;
@@ -831,11 +831,12 @@ export interface ApiFaqCategoryFaqCategory extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    category: Attribute.Relation<
+    faqs: Attribute.Relation<
       'api::faq-category.faq-category',
-      'oneToOne',
+      'oneToMany',
       'api::faq.faq'
     >;
+    category: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
