@@ -886,6 +886,37 @@ export interface ApiNutritionNutrition extends Schema.CollectionType {
   };
 }
 
+export interface ApiNutritionPageNutritionPage extends Schema.SingleType {
+  collectionName: 'nutrition_pages';
+  info: {
+    singularName: 'nutrition-page';
+    pluralName: 'nutrition-pages';
+    displayName: 'NutritionPage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    image: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::nutrition-page.nutrition-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::nutrition-page.nutrition-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -907,6 +938,7 @@ declare module '@strapi/types' {
       'api::faq-section.faq-section': ApiFaqSectionFaqSection;
       'api::global.global': ApiGlobalGlobal;
       'api::nutrition.nutrition': ApiNutritionNutrition;
+      'api::nutrition-page.nutrition-page': ApiNutritionPageNutritionPage;
     }
   }
 }
