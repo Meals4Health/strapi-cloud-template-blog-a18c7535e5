@@ -857,6 +857,37 @@ export interface ApiFaqCategoryFaqCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiFaqPageFaqPage extends Schema.SingleType {
+  collectionName: 'faq_pages';
+  info: {
+    singularName: 'faq-page';
+    pluralName: 'faq-pages';
+    displayName: 'FAQPage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    image: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::faq-page.faq-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::faq-page.faq-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFaqSectionFaqSection extends Schema.SingleType {
   collectionName: 'faq_sections';
   info: {
@@ -883,39 +914,6 @@ export interface ApiFaqSectionFaqSection extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::faq-section.faq-section',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiGlobalGlobal extends Schema.SingleType {
-  collectionName: 'globals';
-  info: {
-    singularName: 'global';
-    pluralName: 'globals';
-    displayName: 'Global';
-    description: 'Define global settings';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    siteName: Attribute.String & Attribute.Required;
-    favicon: Attribute.Media;
-    siteDescription: Attribute.Text & Attribute.Required;
-    defaultSeo: Attribute.Component<'shared.seo'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::global.global',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::global.global',
       'oneToOne',
       'admin::user'
     > &
@@ -1008,8 +1006,8 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::faq.faq': ApiFaqFaq;
       'api::faq-category.faq-category': ApiFaqCategoryFaqCategory;
+      'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::faq-section.faq-section': ApiFaqSectionFaqSection;
-      'api::global.global': ApiGlobalGlobal;
       'api::nutrition.nutrition': ApiNutritionNutrition;
       'api::nutrition-page.nutrition-page': ApiNutritionPageNutritionPage;
     }
