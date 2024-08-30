@@ -904,7 +904,6 @@ export interface ApiFaqSectionFaqSection extends Schema.SingleType {
   attributes: {
     header: Attribute.String;
     body: Attribute.Blocks;
-    Question: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -988,6 +987,37 @@ export interface ApiNutritionPageNutritionPage extends Schema.SingleType {
   };
 }
 
+export interface ApiNutritionSectionNutritionSection extends Schema.SingleType {
+  collectionName: 'nutrition_sections';
+  info: {
+    singularName: 'nutrition-section';
+    pluralName: 'nutrition-sections';
+    displayName: 'NutritionSection';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    header: Attribute.String;
+    body: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::nutrition-section.nutrition-section',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::nutrition-section.nutrition-section',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1012,6 +1042,7 @@ declare module '@strapi/types' {
       'api::faq-section.faq-section': ApiFaqSectionFaqSection;
       'api::nutrition.nutrition': ApiNutritionNutrition;
       'api::nutrition-page.nutrition-page': ApiNutritionPageNutritionPage;
+      'api::nutrition-section.nutrition-section': ApiNutritionSectionNutritionSection;
     }
   }
 }

@@ -1,11 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "faq_sections",
+  "collectionName": "nutrition_sections",
   "info": {
-    "singularName": "faq-section",
-    "pluralName": "faq-sections",
-    "displayName": "FAQSection",
-    "description": ""
+    "singularName": "nutrition-section",
+    "pluralName": "nutrition-sections",
+    "displayName": "NutritionSection"
   },
   "options": {
     "draftAndPublish": true
