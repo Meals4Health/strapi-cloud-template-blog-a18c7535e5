@@ -863,6 +863,7 @@ export interface ApiFaqPageFaqPage extends Schema.SingleType {
     singularName: 'faq-page';
     pluralName: 'faq-pages';
     displayName: 'FAQPage';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -870,6 +871,7 @@ export interface ApiFaqPageFaqPage extends Schema.SingleType {
   attributes: {
     title: Attribute.String;
     image: Attribute.Media;
+    headerText: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
