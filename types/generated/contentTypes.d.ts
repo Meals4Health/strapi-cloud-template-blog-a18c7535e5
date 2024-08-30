@@ -793,7 +793,7 @@ export interface ApiFaqFaq extends Schema.CollectionType {
   info: {
     singularName: 'faq';
     pluralName: 'faqs';
-    displayName: 'FAQ';
+    displayName: 'FAQCategoryQuestions';
     description: '';
   };
   options: {
@@ -803,7 +803,6 @@ export interface ApiFaqFaq extends Schema.CollectionType {
     question: Attribute.String;
     answer: Attribute.Blocks;
     activeYN: Attribute.Boolean;
-    displayOrder: Attribute.Integer;
     category: Attribute.Relation<
       'api::faq.faq',
       'manyToOne',
@@ -824,7 +823,7 @@ export interface ApiFaqCategoryFaqCategory extends Schema.CollectionType {
   info: {
     singularName: 'faq-category';
     pluralName: 'faq-categories';
-    displayName: 'FAQCategory';
+    displayName: 'FAQCategories';
     description: '';
   };
   options: {
@@ -929,7 +928,7 @@ export interface ApiNutritionNutrition extends Schema.CollectionType {
   info: {
     singularName: 'nutrition';
     pluralName: 'nutritions';
-    displayName: 'Nutrition';
+    displayName: 'Nutritions';
     description: '';
   };
   options: {

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "faq",
     "pluralName": "faqs",
-    "displayName": "FAQ",
+    "displayName": "FAQCategoryQuestions",
     "description": ""
   },
   "options": {
@@ -20,9 +20,6 @@
     },
     "activeYN": {
       "type": "boolean"
-    },
-    "displayOrder": {
-      "type": "integer"
     },
     "category": {
       "type": "relation",
