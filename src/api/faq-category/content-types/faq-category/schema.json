@@ -23,6 +23,12 @@
     },
     "displayValue": {
       "type": "string"
+    },
+    "activeYN": {
+      "type": "boolean"
+    },
+    "displayOrder": {
+      "type": "integer"
     }
   }
 }

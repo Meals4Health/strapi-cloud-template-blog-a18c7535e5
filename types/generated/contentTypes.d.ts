@@ -838,6 +838,8 @@ export interface ApiFaqCategoryFaqCategory extends Schema.CollectionType {
     >;
     category: Attribute.String;
     displayValue: Attribute.String;
+    activeYN: Attribute.Boolean;
+    displayOrder: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
