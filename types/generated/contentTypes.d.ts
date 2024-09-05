@@ -922,6 +922,72 @@ export interface ApiFaqSectionFaqSection extends Schema.SingleType {
   };
 }
 
+export interface ApiHowItWorksEntryHowItWorksEntry
+  extends Schema.CollectionType {
+  collectionName: 'how_it_works_entries';
+  info: {
+    singularName: 'how-it-works-entry';
+    pluralName: 'how-it-works-entries';
+    displayName: 'HowItWorksEntries';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    header: Attribute.String;
+    body: Attribute.Blocks;
+    activeYN: Attribute.Boolean;
+    displayOrder: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::how-it-works-entry.how-it-works-entry',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::how-it-works-entry.how-it-works-entry',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHowItWorksPageHowItWorksPage extends Schema.SingleType {
+  collectionName: 'how_it_works_pages';
+  info: {
+    singularName: 'how-it-works-page';
+    pluralName: 'how-it-works-pages';
+    displayName: 'HowItWorksPage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    image: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::how-it-works-page.how-it-works-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::how-it-works-page.how-it-works-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiNutritionNutrition extends Schema.CollectionType {
   collectionName: 'nutritions';
   info: {
@@ -1040,6 +1106,8 @@ declare module '@strapi/types' {
       'api::faq-category.faq-category': ApiFaqCategoryFaqCategory;
       'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::faq-section.faq-section': ApiFaqSectionFaqSection;
+      'api::how-it-works-entry.how-it-works-entry': ApiHowItWorksEntryHowItWorksEntry;
+      'api::how-it-works-page.how-it-works-page': ApiHowItWorksPageHowItWorksPage;
       'api::nutrition.nutrition': ApiNutritionNutrition;
       'api::nutrition-page.nutrition-page': ApiNutritionPageNutritionPage;
       'api::nutrition-section.nutrition-section': ApiNutritionSectionNutritionSection;

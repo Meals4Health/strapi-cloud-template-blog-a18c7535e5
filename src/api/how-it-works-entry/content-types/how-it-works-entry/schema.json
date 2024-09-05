@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "how_it_works_entries",
+  "info": {
+    "singularName": "how-it-works-entry",
+    "pluralName": "how-it-works-entries",
+    "displayName": "HowItWorksEntries"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "activeYN": {
+      "type": "boolean"
+    },
+    "displayOrder": {
+      "type": "integer"
+    }
+  }
+}
