@@ -988,6 +988,74 @@ export interface ApiHowItWorksPageHowItWorksPage extends Schema.SingleType {
   };
 }
 
+export interface ApiNewsEntryNewsEntry extends Schema.CollectionType {
+  collectionName: 'news_entries';
+  info: {
+    singularName: 'news-entry';
+    pluralName: 'news-entries';
+    displayName: 'NewsEntries';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    header: Attribute.String;
+    summary: Attribute.String;
+    body: Attribute.Blocks;
+    activeYN: Attribute.Boolean;
+    displayOrder: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::news-entry.news-entry',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::news-entry.news-entry',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNewsPageNewsPage extends Schema.SingleType {
+  collectionName: 'news_pages';
+  info: {
+    singularName: 'news-page';
+    pluralName: 'news-pages';
+    displayName: 'NewsPage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    image: Attribute.Media;
+    headerText: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::news-page.news-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::news-page.news-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiNutritionNutrition extends Schema.CollectionType {
   collectionName: 'nutritions';
   info: {
@@ -1108,6 +1176,8 @@ declare module '@strapi/types' {
       'api::faq-section.faq-section': ApiFaqSectionFaqSection;
       'api::how-it-works-entry.how-it-works-entry': ApiHowItWorksEntryHowItWorksEntry;
       'api::how-it-works-page.how-it-works-page': ApiHowItWorksPageHowItWorksPage;
+      'api::news-entry.news-entry': ApiNewsEntryNewsEntry;
+      'api::news-page.news-page': ApiNewsPageNewsPage;
       'api::nutrition.nutrition': ApiNutritionNutrition;
       'api::nutrition-page.nutrition-page': ApiNutritionPageNutritionPage;
       'api::nutrition-section.nutrition-section': ApiNutritionSectionNutritionSection;

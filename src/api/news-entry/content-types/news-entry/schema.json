@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news_entries",
+  "info": {
+    "singularName": "news-entry",
+    "pluralName": "news-entries",
+    "displayName": "NewsEntries",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "activeYN": {
+      "type": "boolean"
+    },
+    "displayOrder": {
+      "type": "integer"
+    }
+  }
+}
