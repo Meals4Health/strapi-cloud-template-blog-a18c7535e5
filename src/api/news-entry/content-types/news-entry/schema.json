@@ -12,9 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "header": {
-      "type": "string"
-    },
     "summary": {
       "type": "string"
     },
@@ -26,6 +23,17 @@
     },
     "displayOrder": {
       "type": "integer"
+    },
+    "newsImage": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }
