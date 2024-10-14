@@ -988,6 +988,36 @@ export interface ApiFaqSectionFaqSection extends Schema.SingleType {
   };
 }
 
+export interface ApiFooterFooter extends Schema.SingleType {
+  collectionName: 'footers';
+  info: {
+    singularName: 'footer';
+    pluralName: 'footers';
+    displayName: 'Footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    text: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHowItWorksEntryHowItWorksEntry
   extends Schema.CollectionType {
   collectionName: 'how_it_works_entries';
@@ -1209,6 +1239,7 @@ declare module '@strapi/types' {
       'api::faq-category.faq-category': ApiFaqCategoryFaqCategory;
       'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::faq-section.faq-section': ApiFaqSectionFaqSection;
+      'api::footer.footer': ApiFooterFooter;
       'api::how-it-works-entry.how-it-works-entry': ApiHowItWorksEntryHowItWorksEntry;
       'api::how-it-works-page.how-it-works-page': ApiHowItWorksPageHowItWorksPage;
       'api::news-entry.news-entry': ApiNewsEntryNewsEntry;
