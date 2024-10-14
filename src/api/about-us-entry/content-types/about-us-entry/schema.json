@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "about_us_entries",
+  "info": {
+    "singularName": "about-us-entry",
+    "pluralName": "about-us-entries",
+    "displayName": "AboutUsEntries",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "activeYN": {
+      "type": "boolean"
+    },
+    "displayOrder": {
+      "type": "integer"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
