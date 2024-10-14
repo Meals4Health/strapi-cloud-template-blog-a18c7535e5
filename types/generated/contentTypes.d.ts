@@ -823,6 +823,37 @@ export interface ApiAboutUsEntryAboutUsEntry extends Schema.CollectionType {
   };
 }
 
+export interface ApiAboutUsPageAboutUsPage extends Schema.SingleType {
+  collectionName: 'about_us_pages';
+  info: {
+    singularName: 'about-us-page';
+    pluralName: 'about-us-pages';
+    displayName: 'AboutUsPage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    image: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about-us-page.about-us-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about-us-page.about-us-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Schema.CollectionType {
   collectionName: 'faqs';
   info: {
@@ -1173,6 +1204,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::about-us-entry.about-us-entry': ApiAboutUsEntryAboutUsEntry;
+      'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
       'api::faq.faq': ApiFaqFaq;
       'api::faq-category.faq-category': ApiFaqCategoryFaqCategory;
       'api::faq-page.faq-page': ApiFaqPageFaqPage;
