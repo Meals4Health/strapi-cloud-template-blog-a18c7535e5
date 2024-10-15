@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "address_sections",
+  "info": {
+    "singularName": "address-section",
+    "pluralName": "address-sections",
+    "displayName": "AddressSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "body": {
+      "type": "blocks"
+    }
+  }
+}

@@ -854,6 +854,37 @@ export interface ApiAboutUsPageAboutUsPage extends Schema.SingleType {
   };
 }
 
+export interface ApiAddressSectionAddressSection extends Schema.SingleType {
+  collectionName: 'address_sections';
+  info: {
+    singularName: 'address-section';
+    pluralName: 'address-sections';
+    displayName: 'AddressSection';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    header: Attribute.String;
+    body: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::address-section.address-section',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::address-section.address-section',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCspSectionCspSection extends Schema.SingleType {
   collectionName: 'csp_sections';
   info: {
@@ -1302,6 +1333,7 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::about-us-entry.about-us-entry': ApiAboutUsEntryAboutUsEntry;
       'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
+      'api::address-section.address-section': ApiAddressSectionAddressSection;
       'api::csp-section.csp-section': ApiCspSectionCspSection;
       'api::faq.faq': ApiFaqFaq;
       'api::faq-category.faq-category': ApiFaqCategoryFaqCategory;
