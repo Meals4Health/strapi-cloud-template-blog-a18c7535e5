@@ -854,6 +854,37 @@ export interface ApiAboutUsPageAboutUsPage extends Schema.SingleType {
   };
 }
 
+export interface ApiCspSectionCspSection extends Schema.SingleType {
+  collectionName: 'csp_sections';
+  info: {
+    singularName: 'csp-section';
+    pluralName: 'csp-sections';
+    displayName: 'CSPSection';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    header: Attribute.String;
+    body: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::csp-section.csp-section',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::csp-section.csp-section',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Schema.CollectionType {
   collectionName: 'faqs';
   info: {
@@ -1271,6 +1302,7 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::about-us-entry.about-us-entry': ApiAboutUsEntryAboutUsEntry;
       'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
+      'api::csp-section.csp-section': ApiCspSectionCspSection;
       'api::faq.faq': ApiFaqFaq;
       'api::faq-category.faq-category': ApiFaqCategoryFaqCategory;
       'api::faq-page.faq-page': ApiFaqPageFaqPage;
