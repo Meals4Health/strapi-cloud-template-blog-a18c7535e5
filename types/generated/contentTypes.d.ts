@@ -1018,6 +1018,42 @@ export interface ApiFooterFooter extends Schema.SingleType {
   };
 }
 
+export interface ApiHomePageEntryHomePageEntry extends Schema.CollectionType {
+  collectionName: 'home_page_entries';
+  info: {
+    singularName: 'home-page-entry';
+    pluralName: 'home-page-entries';
+    displayName: 'HomePageEntries';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    header: Attribute.String;
+    body: Attribute.Blocks;
+    activeYN: Attribute.Boolean;
+    displayOrder: Attribute.Integer;
+    image: Attribute.Media;
+    videoUrl: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::home-page-entry.home-page-entry',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::home-page-entry.home-page-entry',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHowItWorksEntryHowItWorksEntry
   extends Schema.CollectionType {
   collectionName: 'how_it_works_entries';
@@ -1240,6 +1276,7 @@ declare module '@strapi/types' {
       'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::faq-section.faq-section': ApiFaqSectionFaqSection;
       'api::footer.footer': ApiFooterFooter;
+      'api::home-page-entry.home-page-entry': ApiHomePageEntryHomePageEntry;
       'api::how-it-works-entry.how-it-works-entry': ApiHowItWorksEntryHowItWorksEntry;
       'api::how-it-works-page.how-it-works-page': ApiHowItWorksPageHowItWorksPage;
       'api::news-entry.news-entry': ApiNewsEntryNewsEntry;
