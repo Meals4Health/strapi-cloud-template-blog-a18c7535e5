@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "meals4health_logos",
+  "info": {
+    "singularName": "meals4health-logo",
+    "pluralName": "meals4health-logos",
+    "displayName": "Meals4HealthLogo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

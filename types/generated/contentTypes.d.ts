@@ -1182,6 +1182,36 @@ export interface ApiHowItWorksPageHowItWorksPage extends Schema.SingleType {
   };
 }
 
+export interface ApiMeals4HealthLogoMeals4HealthLogo extends Schema.SingleType {
+  collectionName: 'meals4health_logos';
+  info: {
+    singularName: 'meals4health-logo';
+    pluralName: 'meals4health-logos';
+    displayName: 'Meals4HealthLogo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    image: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::meals4health-logo.meals4health-logo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::meals4health-logo.meals4health-logo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiNewsEntryNewsEntry extends Schema.CollectionType {
   collectionName: 'news_entries';
   info: {
@@ -1343,6 +1373,7 @@ declare module '@strapi/types' {
       'api::home-page-entry.home-page-entry': ApiHomePageEntryHomePageEntry;
       'api::how-it-works-entry.how-it-works-entry': ApiHowItWorksEntryHowItWorksEntry;
       'api::how-it-works-page.how-it-works-page': ApiHowItWorksPageHowItWorksPage;
+      'api::meals4health-logo.meals4health-logo': ApiMeals4HealthLogoMeals4HealthLogo;
       'api::news-entry.news-entry': ApiNewsEntryNewsEntry;
       'api::nutrition.nutrition': ApiNutritionNutrition;
       'api::nutrition-page.nutrition-page': ApiNutritionPageNutritionPage;
