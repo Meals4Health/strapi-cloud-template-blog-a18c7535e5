@@ -1343,6 +1343,38 @@ export interface ApiNutritionSectionNutritionSection extends Schema.SingleType {
   };
 }
 
+export interface ApiSocialMediaSocialMedia extends Schema.SingleType {
+  collectionName: 'social_medias';
+  info: {
+    singularName: 'social-media';
+    pluralName: 'social-medias';
+    displayName: 'SocialMedia';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    facebookUrl: Attribute.String;
+    twitterUrl: Attribute.String;
+    instagramUrl: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::social-media.social-media',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::social-media.social-media',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1378,6 +1410,7 @@ declare module '@strapi/types' {
       'api::nutrition.nutrition': ApiNutritionNutrition;
       'api::nutrition-page.nutrition-page': ApiNutritionPageNutritionPage;
       'api::nutrition-section.nutrition-section': ApiNutritionSectionNutritionSection;
+      'api::social-media.social-media': ApiSocialMediaSocialMedia;
     }
   }
 }
