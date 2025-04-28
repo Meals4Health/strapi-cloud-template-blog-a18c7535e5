@@ -1080,6 +1080,38 @@ export interface ApiFooterFooter extends Schema.SingleType {
   };
 }
 
+export interface ApiHomePageHomePage extends Schema.SingleType {
+  collectionName: 'home_pages';
+  info: {
+    singularName: 'home-page';
+    pluralName: 'home-pages';
+    displayName: 'HomePage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bannerImageDesktop: Attribute.Media;
+    bannerImageMobile: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomePageEntryHomePageEntry extends Schema.CollectionType {
   collectionName: 'home_page_entries';
   info: {
@@ -1402,6 +1434,7 @@ declare module '@strapi/types' {
       'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::faq-section.faq-section': ApiFaqSectionFaqSection;
       'api::footer.footer': ApiFooterFooter;
+      'api::home-page.home-page': ApiHomePageHomePage;
       'api::home-page-entry.home-page-entry': ApiHomePageEntryHomePageEntry;
       'api::how-it-works-entry.how-it-works-entry': ApiHowItWorksEntryHowItWorksEntry;
       'api::how-it-works-page.how-it-works-page': ApiHowItWorksPageHowItWorksPage;
