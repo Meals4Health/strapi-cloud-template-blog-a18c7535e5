@@ -1280,39 +1280,6 @@ export interface ApiNewsEntryNewsEntry extends Schema.CollectionType {
   };
 }
 
-export interface ApiNewsSectionNewsSection extends Schema.SingleType {
-  collectionName: 'news_sections';
-  info: {
-    singularName: 'news-section';
-    pluralName: 'news-sections';
-    displayName: 'NewsSection';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    newsCount: Attribute.Integer;
-    header: Attribute.String;
-    body: Attribute.Blocks;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::news-section.news-section',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::news-section.news-section',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiNutritionNutrition extends Schema.CollectionType {
   collectionName: 'nutritions';
   info: {
@@ -1474,7 +1441,6 @@ declare module '@strapi/types' {
       'api::how-it-works-page.how-it-works-page': ApiHowItWorksPageHowItWorksPage;
       'api::meals4health-logo.meals4health-logo': ApiMeals4HealthLogoMeals4HealthLogo;
       'api::news-entry.news-entry': ApiNewsEntryNewsEntry;
-      'api::news-section.news-section': ApiNewsSectionNewsSection;
       'api::nutrition.nutrition': ApiNutritionNutrition;
       'api::nutrition-page.nutrition-page': ApiNutritionPageNutritionPage;
       'api::nutrition-section.nutrition-section': ApiNutritionSectionNutritionSection;
