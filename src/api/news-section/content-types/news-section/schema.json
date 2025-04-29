@@ -15,11 +15,11 @@
     "newsCount": {
       "type": "integer"
     },
-    "body": {
-      "type": "string"
-    },
     "header": {
       "type": "string"
+    },
+    "body": {
+      "type": "blocks"
     }
   }
 }
