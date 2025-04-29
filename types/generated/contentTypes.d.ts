@@ -1293,8 +1293,8 @@ export interface ApiNewsSectionNewsSection extends Schema.SingleType {
   };
   attributes: {
     newsCount: Attribute.Integer;
-    description: Attribute.String;
-    title: Attribute.String;
+    body: Attribute.String;
+    header: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -15,10 +15,10 @@
     "newsCount": {
       "type": "integer"
     },
-    "description": {
+    "body": {
       "type": "string"
     },
-    "title": {
+    "header": {
       "type": "string"
     }
   }
