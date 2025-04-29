@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "news_sections",
+  "info": {
+    "singularName": "news-section",
+    "pluralName": "news-sections",
+    "displayName": "NewsSection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "newsCount": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}
