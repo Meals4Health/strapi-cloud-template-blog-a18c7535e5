@@ -1414,6 +1414,7 @@ export interface ApiSocialMediaSocialMedia extends Schema.SingleType {
     singularName: 'social-media';
     pluralName: 'social-medias';
     displayName: 'SocialMedia';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1422,6 +1423,9 @@ export interface ApiSocialMediaSocialMedia extends Schema.SingleType {
     facebookUrl: Attribute.String;
     twitterUrl: Attribute.String;
     instagramUrl: Attribute.String;
+    facebookImage: Attribute.Media;
+    twitterImage: Attribute.Media;
+    instagramImage: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
