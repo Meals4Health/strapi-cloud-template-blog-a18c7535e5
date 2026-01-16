@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "social_media_entries",
+  "info": {
+    "singularName": "social-media-entry",
+    "pluralName": "social-media-entries",
+    "displayName": "SocialMediaEntries"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "url": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "displayOrder": {
+      "type": "integer"
+    },
+    "axctiveYN": {
+      "type": "boolean"
+    }
+  }
+}
