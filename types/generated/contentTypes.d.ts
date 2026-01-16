@@ -1451,6 +1451,7 @@ export interface ApiSocialMediaEntrySocialMediaEntry
     singularName: 'social-media-entry';
     pluralName: 'social-media-entries';
     displayName: 'SocialMediaEntries';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1459,7 +1460,8 @@ export interface ApiSocialMediaEntrySocialMediaEntry
     url: Attribute.String;
     image: Attribute.Media;
     displayOrder: Attribute.Integer;
-    axctiveYN: Attribute.Boolean;
+    activeYN: Attribute.Boolean;
+    Name: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

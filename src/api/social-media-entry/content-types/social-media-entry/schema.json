@@ -4,7 +4,8 @@
   "info": {
     "singularName": "social-media-entry",
     "pluralName": "social-media-entries",
-    "displayName": "SocialMediaEntries"
+    "displayName": "SocialMediaEntries",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,20 +16,24 @@
       "type": "string"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "displayOrder": {
       "type": "integer"
     },
-    "axctiveYN": {
+    "activeYN": {
       "type": "boolean"
+    },
+    "Name": {
+      "type": "string"
     }
   }
 }
